@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!--<link href="css/style.css" rel="stylesheet">-->
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,7 +25,7 @@
 <div class="container">
 
 <?php
-include('function.inc.php');
+include('function.php');
 
 
 if(isset($_GET['value'])){ 
@@ -42,15 +42,12 @@ else{
 
 echo '<br /><br />';
 
-echo '<table class="table table-hover table-condensed table-striped">';
-echo '<tbody>';
-echo '<thead>';
-echo '<tr>';
-echo '<th>type</th>';
-echo '<th>nom</th>';
-echo '<th>synchro</th>';
-echo '</tr>';
-echo '</thead>';
+// echo '<table>';
+echo '<div class="row">';
+echo '<div class="col-lg-1">type</div>';
+echo '<div class="col-lg-9">nom</div>';
+echo '<div class="col-lg-2">synchro</div>';
+echo '</div>';
 // Ouvre un dossier bien connu, et liste tous les fichiers
 if (is_dir($dir)){
 	
@@ -63,8 +60,7 @@ if (is_dir($dir)){
         closedir($dh);
     }
 }
-echo '</tbody>';
-echo '</table>';
+// echo '</table>';
 ?>
 </div>
 </body>
