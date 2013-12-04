@@ -135,7 +135,12 @@ sub {
 img {
   border: 0;
 }
-
+.tableimg{
+	width:23px;
+	float: left;
+	margin-top: -2px;
+	margin-right:5px;
+}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -2261,6 +2266,7 @@ textarea.input-lg {
 }
 
 .tablebtn {
+	float: right;
   display: inline-block;
   padding: 2px 12px;
   margin-bottom: 0;
