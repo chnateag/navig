@@ -112,6 +112,7 @@ echo '<th>nom</th>'."\n";
 echo '<th><span style="float:right;">synchro</span></th>'."\n";
 echo '</tr>'."\n";
 echo '</thead>'."\n";
+$i = 0;
 // Ouvre un dossier bien connu, et liste tous les fichiers
 if (is_dir($dir)){
 	
@@ -120,12 +121,24 @@ if (is_dir($dir)){
     if ($dh = opendir($dir)) {
         while (($file = readdir($dh)) !== false) {
 			genererLigne($dir, $file);
+			$arrayContent[$i][0] = $dir; // on teste de tout rentrer dans un array pour trier comme on veut
+			$arrayContent[$i][1] = $file;
+			$i++;
 	   }
         closedir($dh);
     }
 }
 echo '</tbody>'."\n";
 echo '</table>'."\n";
+
+echo '<br />';
+echo '<br />';
+echo '<br />';
+
+echo '<pre>';
+echo print_r($arrayContent);
+echo '</pre>';
+echo 'test';
 ?>
 </div>
 </body>
